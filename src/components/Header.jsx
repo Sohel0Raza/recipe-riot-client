@@ -14,7 +14,7 @@ const Header = () => {
             <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/login">Login</NavLink>
         </div>
         <div className="md:mr-20">
-        <button className="btn-primary">Login</button>
+       <Link to="/login"> <button className="btn-primary">Login</button></Link>
         </div>
      </div>
     </nav>
