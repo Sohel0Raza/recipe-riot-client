@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { MdFoodBank } from "react-icons/md";
+import { CgCalendarDates } from "react-icons/cg";
+import { AiFillLike } from "react-icons/ai";
 
 const Chef = (props) => {
-  console.log(props.chef);
   const { name, picture, num_of_recipes, years_of_experience, likes , id} =
     props.chef;
   return (
@@ -16,29 +19,30 @@ const Chef = (props) => {
         </div>
         <div className="card-body">
           <h2 className="card-title font-bold text-2xl">{name}</h2>
-          <div className="flex justify-evenly mt-3 shadow-2xl p-3 rounded-lg hover:bg-amber-100">
-            <div>
-              <h4 className="font-bold text-xl p-2 text-cyan-500">
-                {num_of_recipes}
-              </h4>
-              <h3 className="text-lg font-semibold">Of Recipes</h3>
-            </div>
-            <div>
-              <h4 className="font-bold text-xl p-2 text-amber-500">
-                {likes}k
-              </h4>
-              <h3 className="text-lg font-semibold">Likes</h3>
-            </div>
-          </div>
-          <div className="shadow-2xl p-2 my-3 rounded-lg hover:bg-cyan-100 text-center">
+          <div className="flex items-center mt-5 shadow-2xl p-2 rounded-lg hover:bg-amber-100">
+            <MdFoodBank className="text-xl"/>
             <h4 className="font-bold text-xl p-2 text-cyan-500">
+              { num_of_recipes}
+            </h4>
+            <h3 className="text-lg font-semibold">Of Recipes</h3>
+          </div>
+          <div className="flex items-center shadow-2xl p-2 rounded-lg hover:bg-cyan-100">
+            <CgCalendarDates className="text-xl"/>
+            <h4 className="font-bold text-xl p-2 text-amber-500">
               {years_of_experience}
             </h4>
             <h3 className="text-lg font-semibold">Years Experience</h3>
           </div>
+          <div className="flex items-center shadow-2xl p-2 rounded-lg hover:bg-amber-100">
+            <AiFillLike className="text-xl"/>
+            <h4 className="font-bold text-xl p-2 text-cyan-500">
+              {likes}k
+            </h4>
+            <h3 className="text-lg font-semibold">Likes</h3>
+          </div>
 
           <div className="card-actions justify-end">
-            <button className="btn-secondary">Viwe Recipe</button>
+            <Link to={`/chefRecipe/${id}`}>  <button className="btn-secondary">Viwe Recipe</button></Link>
           </div>
         </div>
       </div>

@@ -23,6 +23,7 @@ const Header = () => {
         </div>
         <div className="font-semibold space-x-10">
             <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/">Home</NavLink>
+            <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/chefRecipe/:id">Chef Recipe</NavLink>
             <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/blogs">Blogs</NavLink>
             <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/login">Login</NavLink>
         </div>
