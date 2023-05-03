@@ -14,7 +14,7 @@ const AllChef = () => {
     return (
         <div className='md:w-10/12 mx-auto'>
             <h1 className='text-3xl font-serif font-bold text-center md:mb-16'>Our Japanese Chef</h1>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:mb-8'>
+          <div className='grid grid-cols-1 md:grid-cols-3 md:gap-8 md:mb-8'>
           {
                 chefs.map(chef =><Chef 
                 key={chef.name}

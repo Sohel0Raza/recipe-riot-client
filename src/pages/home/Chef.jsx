@@ -10,7 +10,7 @@ const Chef = (props) => {
   return (
     <div>
       <div className="card bg-base-100 h-100 shadow-xl">
-        <div>
+        <div className="p-5 md:p-0">
           <img
             className="w-full h-full md:px-8 md:pt-8"
             src={picture}
@@ -19,7 +19,7 @@ const Chef = (props) => {
         </div>
         <div className="card-body">
           <h2 className="card-title font-bold text-2xl">{name}</h2>
-          <div className="flex items-center mt-5 shadow-2xl p-2 rounded-lg hover:bg-amber-100">
+          <div className="flex items-center md:mt-5 shadow-2xl p-2 rounded-lg hover:bg-amber-100">
             <MdFoodBank className="text-xl"/>
             <h4 className="font-bold text-xl p-2 text-cyan-500">
               { num_of_recipes}
