@@ -12,11 +12,6 @@ const Header = () => {
     })
   }
 
-  const handleDisplayName = ()=>{
-    return (
-    <title className="tooltip" data-tip={user.displayName}></title>
-    )
-  }
   return (
     <nav>
      <div className="md:flex items-center justify-between bg-green-50 py-3">
@@ -32,7 +27,9 @@ const Header = () => {
           {
             user?<>
             <div className="h-10 w-10 mr-5">
-              <button onMouseMove={handleDisplayName}><img   className="h-full w-full rounded-full" src={user.photoURL} alt=""/></button>
+              <button>
+              <img  className="h-full w-full rounded-full tooltip" data-tip={user.displayName} src={user.photoURL} alt=""/>
+              </button>
             </div>
             <Link to="/login"> <button onClick={handelLogOut} className="btn-primary">Sing Out</button></Link> </> 
             : <Link to="/login"> <button className="btn-primary">Login</button></Link>

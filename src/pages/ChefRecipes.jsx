@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const ChefRecipes = () => {
   const chefInfo = useLoaderData();
   const handelTostify = () => {
-
    return toast("Successfully added your food !!")
   }
   const {
@@ -76,7 +75,7 @@ const ChefRecipes = () => {
                       {recipe.name}
                     </h3>
                     <p className="pb-2 px-5">
-                      <span className="text-xl">Cooking Method</span> :{" "}
+                      <span className="text-xl">Cooking Method</span> :
                       {recipe.cooking_method}
                     </p>
                     <p className="flex items-center text-xl px-5">
