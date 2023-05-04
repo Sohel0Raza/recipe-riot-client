@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useLoaderData } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
@@ -13,7 +13,9 @@ const Header = () => {
   }
 
   const handleDisplayName = ()=>{
-    console.log(user.displayName)
+    return (
+    <title className="tooltip" data-tip={user.displayName}></title>
+    )
   }
   return (
     <nav>
@@ -30,7 +32,7 @@ const Header = () => {
           {
             user?<>
             <div className="h-10 w-10 mr-5">
-             <img  onMouseMove={handleDisplayName} className="h-full w-full rounded-full" src={user.photoURL} alt=""/>
+              <button onMouseMove={handleDisplayName}><img   className="h-full w-full rounded-full" src={user.photoURL} alt=""/></button>
             </div>
             <Link to="/login"> <button onClick={handelLogOut} className="btn-primary">Sing Out</button></Link> </> 
             : <Link to="/login"> <button className="btn-primary">Login</button></Link>

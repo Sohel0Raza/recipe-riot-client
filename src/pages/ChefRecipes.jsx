@@ -27,7 +27,7 @@ const ChefRecipes = () => {
       <h2 className="text-3xl text-center py-10 font-thin bg-green-50 text-amber-600">
         CHEF RECIPES
       </h2>
-      <div className="md:flex justify-star shadow-2xl mb-20">
+      <div className="md:flex justify-star shadow-2xl mb-20 mt-10">
         <div className="md:w-1/2">
           <img className="w-full h-full py-5 pl-5" src={picture} alt="" />
         </div>
