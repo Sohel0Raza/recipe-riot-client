@@ -16,6 +16,9 @@
 .btn-secondary{
   @apply font-medium md:mb-0  px-6 py-2 md:px-8 md:py-3 m-5 text-lg rounded-full  text-white bg-amber-700 hover:bg-cyan-500
 }
+.btn-food{
+  @apply font-medium md:mb-0  px-6 py-1 md:px-8 md:py-1 mx-4 my-5 text-lg rounded  text-white bg-amber-700 hover:bg-cyan-500
+}
 .btn-outlined{
   @apply  font-medium  transition duration-200  shadow-md  md:mb-0  px-4 py-2 md:px-8 md:py-2 m-2 text-lg rounded  text-gray-700 hover:bg-cyan-400 hover:border-transparent border-2 border-cyan-200 hover:text-white
 }

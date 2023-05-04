@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   const handleDisplayName = ()=>{
-    return <title>{user.displayName}</title>
+    console.log(user.displayName)
   }
   return (
     <nav>
@@ -23,7 +23,6 @@ const Header = () => {
         </div>
         <div className="font-semibold flex flex-col md:block ml-5 space-y-2 md:space-y-0 md:space-x-10">
             <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/">Home</NavLink>
-            <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/chefRecipe/:id">Chef Recipe</NavLink>
             <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/blogs">Blogs</NavLink>
             <NavLink className={({isActive})=> isActive ? 'active' : 'default'} to="/login">Login</NavLink>
         </div>
