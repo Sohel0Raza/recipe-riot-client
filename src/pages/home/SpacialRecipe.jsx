@@ -12,13 +12,13 @@ const SpacialRecipe = () => {
       </h2>
       <div className="md:flex md:justify-center">
         <div className="md:w-1/2 m-5 md:relative p-5">
-          <LazyLoad>
+         
             <img
               className="rounded md:absolute md:left-12 h-full w-full"
               src="../../../public/Traditional-Japanese-Foods.jpg"
               alt=""
             />
-          </LazyLoad>
+       
         </div>
         <div className="md:w-1/2 m-5">
           <div className="md:ml-20 px-5 my-5 rounded shadow-2xl bg-slate-100 hover:bg-amber-50">

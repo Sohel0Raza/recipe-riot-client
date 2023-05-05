@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "chefRecipe/:id",
         element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/chefData/${params.id}`)
+        loader:({params})=> fetch(`https://my-chef-recipe-server-himurana.vercel.app/chefData/${params.id}`)
       },
       {
         path: "/blogs",
@@ -40,10 +40,11 @@ const router = createBrowserRouter([
         element: <Register />,
       },
     ],
+    
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot( document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />

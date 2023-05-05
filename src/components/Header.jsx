@@ -26,10 +26,8 @@ const Header = () => {
         <div className="md:mr-20 mt-3 md:mt-0 ml-5 md:ml-0 md:flex justify-center items-center">
           {
             user?<>
-            <div className="h-10 w-10 mr-5">
-              <button>
-              <img  className="h-full w-full rounded-full tooltip" data-tip={user.displayName} src={user.photoURL} alt=""/>
-              </button>
+            <div className="h-10 w-10 mr-5 tooltip tooltip-bottom tooltip-secondary"  data-tip={user.displayName}>
+             <button> <img  className="h-full w-full rounded-full "src={user.photoURL} alt=""/></button>
             </div>
             <Link to="/login"> <button onClick={handelLogOut} className="btn-primary">Sing Out</button></Link> </> 
             : <Link to="/login"> <button className="btn-primary">Login</button></Link>

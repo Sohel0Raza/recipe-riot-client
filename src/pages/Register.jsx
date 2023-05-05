@@ -17,7 +17,7 @@ const Register = () => {
     const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(email, photoURL);
 
     createUser(email, password)
     .then(result=>{
@@ -53,7 +53,7 @@ const Register = () => {
             <h1 className="text-5xl font-bold font-serif">Register Now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handelRegister} className="card-body">
+            <form onSubmit={handelRegister} className="card-body" >
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -72,7 +72,6 @@ const Register = () => {
                 </label>
                 <input type="text"  name="photo"
                   placeholder="image url"
-                  required
                   className="input input-bordered" />
               </div>
               <div className="form-control">

@@ -4,7 +4,7 @@ import Chef from './Chef';
 const AllChef = () => {
     const [chefs, setChefs] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/chefData')
+        fetch('https://my-chef-recipe-server-himurana.vercel.app/chefData')
         .then(res=> res.json())
         .then(data =>setChefs(data))
         .catch(error =>{

@@ -5,8 +5,14 @@ import { useLoaderData } from "react-router-dom";
 import { FcRating } from "react-icons/fc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const ChefRecipes = () => {
+  const [disabled, setDisabled] = useState(false);
+  const [rating, setRating] = useState(0) 
+
   const chefInfo = useLoaderData();
   const handelTostify = () => {
    return toast("Successfully added your food !!")
@@ -79,10 +85,10 @@ const ChefRecipes = () => {
                       {recipe.cooking_method}
                     </p>
                     <p className="flex items-center text-xl px-5">
-                      <FcRating className="mr-3" />
+                    <Rating style={{ maxWidth: 100 }} value={rating} readOnly className="mr-2" />
                       {recipe.rating}
                     </p>
-                    <button onClick={handelTostify} className="btn-food">Favourit Food</button>
+                    <button   onClick={handelTostify} className="btn-food">Favourit Food</button>
                   </div>
                 </div>
               );
