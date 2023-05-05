@@ -15,7 +15,7 @@ const SpacialRecipe = () => {
          
             <img
               className="rounded md:absolute md:left-12 h-full w-full"
-              src="../../../public/Traditional-Japanese-Foods.jpg"
+              src="/public/Traditional-Japanese-Foods.jpg"
               alt=""
             />
        

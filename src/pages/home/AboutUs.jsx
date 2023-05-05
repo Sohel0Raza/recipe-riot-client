@@ -13,9 +13,7 @@ const AboutUs = () => {
                 <button className='btn-outlined'>Read More</button>
             </div>
             <div className='md:w-1/2 p-2'>
-               
-                    <img className='w-full h-full'  src="../../../public/spanner-crab-rice-with-edamame-and-tobiko-135052-2.jpg" alt="" />
-              
+                    <img className='w-full h-full'  src="/public/spanner-crab-rice-with-edamame-and-tobiko-135052-2.jpg" alt="" />
             </div>
         </div>
     );
