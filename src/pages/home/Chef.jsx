@@ -10,30 +10,30 @@ const Chef = (props) => {
   return (
     <div>
       <div className="card bg-base-100 h-100 shadow-xl">
-        <div className="p-5 md:p-0">
+        <div className="md:h-52 md:w-[353px]">
           <img
-            className="w-full h-full md:px-8 md:pt-8"
+            className="w-full h-full"
             src={picture}
             alt="man"
           />
         </div>
         <div className="card-body">
           <h2 className="card-title font-bold text-2xl">{name}</h2>
-          <div className="flex items-center md:mt-5 shadow-2xl p-2 rounded-lg hover:bg-amber-100">
+          <div className="flex items-center shadow-2xl p-2 rounded-lg hover:bg-amber-100">
             <MdFoodBank className="text-xl"/>
-            <h4 className="font-bold text-xl p-2 text-cyan-500">
+            <h4 className="font-bold text-xl px-2 text-cyan-500">
               { num_of_recipes}
             </h4>
             <h3 className="text-lg font-semibold">Of Recipes</h3>
           </div>
-          <div className="flex items-center shadow-2xl p-2 rounded-lg hover:bg-cyan-100">
+          <div className="flex items-center shadow-2xl px-2 rounded-lg hover:bg-cyan-100">
             <CgCalendarDates className="text-xl"/>
             <h4 className="font-bold text-xl p-2 text-amber-500">
               {years_of_experience}
             </h4>
             <h3 className="text-lg font-semibold">Years Experience</h3>
           </div>
-          <div className="flex items-center shadow-2xl p-2 rounded-lg hover:bg-amber-100">
+          <div className="flex items-center shadow-2xl px-2 rounded-lg hover:bg-amber-100">
             <AiFillLike className="text-xl"/>
             <h4 className="font-bold text-xl p-2 text-cyan-500">
               {likes}k

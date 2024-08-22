@@ -1,16 +1,20 @@
 import React from "react";
 import Header from "../components/Header";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 
 const Main = () => {
+  const location = useLocation();
+  const noHeaderFooter =
+    location.pathname.includes("login") ||
+    location.pathname.includes("register");
   return (
     <div>
-      <Header />
-      <div className='md:min-h-[calc(100vh-190px)]'>
+      <div className="md:min-h-[calc(100vh-190px)]">
+        {noHeaderFooter || <Header />}
         <Outlet />
+        {noHeaderFooter || <Footer />}
       </div>
-      <Footer />
     </div>
   );
 };

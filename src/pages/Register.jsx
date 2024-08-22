@@ -1,17 +1,19 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const {user, createUser} = useContext(AuthContext)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
+  const { user, createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const from = location.state?.from?.pathname || "/";
   const handelRegister = (event) => {
     event.preventDefault();
-    setSuccess('')
+    setSuccess("");
     const form = event.target;
     const name = form.name.value;
     const photoURL = form.photo.value;
@@ -20,30 +22,30 @@ const Register = () => {
     console.log(email, photoURL);
 
     createUser(email, password)
-    .then(result=>{
-      const loggedUser = result.user
-      updateUserData(loggedUser,name,photoURL)
-      form.reset()
-      setError('')
-      setSuccess('User has been created successfully !!')
-    })
-    .catch(error =>{
-      setError(error.message)
-    })
+      .then((result) => {
+        const loggedUser = result.user;
+        updateUserData(loggedUser, name, photoURL);
+        form.reset();
+        setError("");
+        setSuccess("User has been created successfully !!");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
 
-    
-  const updateUserData =(user,name,photoURL)=>{
-    updateProfile(user, {
-      displayName: name,
-      photoURL:photoURL
-    })
-    .then(()=>{
-      console.log('update data')
-    })
-    .catch(error=>{
-      setError(error.message)
-    })
-  }
+    const updateUserData = (user, name, photoURL) => {
+      updateProfile(user, {
+        displayName: name,
+        photoURL: photoURL,
+      })
+        .then(() => {
+          console.log("update data");
+        })
+        .catch((error) => {
+          setError(error.message);
+        });
+    };
   };
   return (
     <div>
@@ -53,7 +55,7 @@ const Register = () => {
             <h1 className="text-5xl font-bold font-serif">Register Now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handelRegister} className="card-body" >
+            <form onSubmit={handelRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -70,9 +72,12 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Photo URL</span>
                 </label>
-                <input type="text"  name="photo"
+                <input
+                  type="text"
+                  name="photo"
                   placeholder="image url"
-                  className="input input-bordered" />
+                  className="input input-bordered"
+                />
               </div>
               <div className="form-control">
                 <label className="label">
@@ -105,7 +110,7 @@ const Register = () => {
               <p className="text-gray-600">
                 <small>
                   Already have an account?
-                  <Link to="/Login" className="text-red-600 btn btn-link">
+                  <Link to="/login" className="text-red-600 btn btn-link">
                     Login
                   </Link>
                 </small>
